@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Adam Laughlin</title>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://underscorejs.org/underscore-min.js"></script>
@@ -12,22 +13,23 @@
   <body>
     <div class="wrap">
       <header>
-        <h1>My Projects</h1>
+        <h1>Adam Laughlin</h1>
       
         <nav class="nav-bar">
           <ul class="group">
             <li><a href="#/projects/1" class="nav-link-1 nav-link" data-id="1">Pinless</a></li>
             <li><a href="#/projects/2" class="nav-link-2 nav-link" data-id="2">Asteroids</a></li>
             <li><a href="#/projects/3" class="nav-link-3 nav-link" data-id="3">Chess</a></li>
+            <li><a href="#/skills" class="nav-link-4 nav-link">Skills</a></li>
           </ul>
         </nav>
       </header>
 
       <section id="content">
-        <article class="project-1 project">
+        <article class="project-1 dynamic">
           <h3><a href="http://adamlaughlin.net" class="project-link">Pinless</a></h3>
           <p class="description">A clone of Pintrest, made with RoR and Backbone.js</p>
-          <img src="images/pinless_small.png" class="project-screenshot"></img>
+          <img src="images/pinless_small.png" class="project-screenshot">
           <ul>
             <li><p>Users can create accounts by inputting details, or log in through Facebook.</p></li>
             <li><p>Users can create boards and cards, allowing them to share images.</p></li>
@@ -37,17 +39,17 @@
           </ul>
         </article>
 
-        <article class="project-2 project">
+        <article class="project-2 dynamic">
           <h3>Asteroids</h3>
           <p>
             Asteroids in the browser, made using Canvas
           </p>
         </article>
 
-        <article class="project-3 project">
+        <article class="project-3 dynamic">
           <h3><a href="https://github.com/alaughlin/chess" class="project-link">Chess</a></h3>
           <p class="description">Chess in Ruby</p>
-          <img src="images/chess_small.png" class="project-screenshot"></img>
+          <img src="images/chess_small.png" class="project-screenshot">
           <ul>
             <li><p>Unicode pieces</p></li>
             <li><p>Color board</p></li>
@@ -57,6 +59,16 @@
             <li><p>Support for saving/loading a game</p></li>
             <li><p>Captured piece display</p></li>
           </ul>
+        </article>
+
+        <article class="skills dynamic">
+          <a href="https://www.ruby-lang.org/"><img src="images/ruby.png" class="skill-image"></a>
+          <a href="http://www.rubyonrails.org/"><img src="images/rails.svg" class="skill-image"></a>
+          <img src="images/javascript.png" class="skill-image">
+          <a href="http://www.jquery.com/"><img src="images/jquery.png" class="skill-image"></a>
+          <a href="http://www.backbonejs.org/"><img src="images/backbone.png" class="skill-image"></a>
+          <img src="images/html.png" class="skill-image">
+          <a href="https://www.python.org/"><img src="images/python.png" class="skill-image"></a>
         </article>
       </section>
 

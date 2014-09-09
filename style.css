@@ -65,7 +65,7 @@ p {
 }
 
 .nav-bar {
-  width: 311px;
+  width: 419px;
   margin: 0 auto;
 }
 
@@ -91,13 +91,13 @@ p {
   width: 700px;
 }
 
-.project {
+.dynamic {
   text-align: center;
   padding: 0 20px 20px 20px;
   display: none;
 }
 
-.project-show {
+.show {
   display: block;
 }
 
@@ -114,6 +114,13 @@ p {
   width: 654px;
   margin: 20px 0;
   border: 3px solid #ccc;
+}
+
+.skill-image {
+  display: inline-block;
+  height: 50px;
+  /*-webkit-filter: grayscale(100%);*/
+  padding: 20px;
 }
 
 #footer {

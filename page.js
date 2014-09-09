@@ -11,6 +11,7 @@ window.MySite = {
 
       routes: {
         '':             'project',
+        'skills':       'skills',
         'projects/:id': 'project'
       },
 
@@ -22,10 +23,20 @@ window.MySite = {
         $navLink = $('.nav-link-' + id);
         $navLink.addClass('nav-link-visited');
 
-        // show the correct content
-        $('.project').removeClass('project-show');
+        $('.dynamic').removeClass('show');
         $project = $('.project-' + id);
-        $project.addClass('project-show');
+        $project.addClass('show');
+      },
+
+      skills: function () {
+        console.log("fired");
+        $('.nav-link').removeClass('nav-link-visited');
+        $navLink = $('.nav-link-4');
+        $navLink.addClass('nav-link-visited');
+
+        $('.dynamic').removeClass('show');
+        $skills = $('.skills');
+        $skills.addClass('show');
       }
     });
 
