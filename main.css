@@ -149,10 +149,12 @@ p {
   padding: 5px;
 }
 
+.skill-image,
 .icon {
   opacity: 0.8;
 }
 
+.skill-image:hover,
 .icon:hover {
   opacity: 1.0;
 }
