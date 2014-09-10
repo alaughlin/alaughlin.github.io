@@ -12,6 +12,7 @@ window.MySite = {
       routes: {
         '':             'project',
         'skills':       'skills',
+        'contact':      'contact',
         'projects/:id': 'project'
       },
 
@@ -19,24 +20,34 @@ window.MySite = {
         if (id === null) {
           var id = 1;
         }
+
         $('.nav-link').removeClass('nav-link-visited');
-        $navLink = $('.nav-link-' + id);
+        var $navLink = $('.nav-link-' + id);
         $navLink.addClass('nav-link-visited');
 
         $('.dynamic').removeClass('show');
-        $project = $('.project-' + id);
+        var $project = $('.project-' + id);
         $project.addClass('show');
       },
 
       skills: function () {
-        console.log("fired");
         $('.nav-link').removeClass('nav-link-visited');
-        $navLink = $('.nav-link-4');
+        var $navLink = $('.nav-link-4');
         $navLink.addClass('nav-link-visited');
 
         $('.dynamic').removeClass('show');
-        $skills = $('.skills');
+        var $skills = $('.skills');
         $skills.addClass('show');
+      },
+
+      contact: function () {
+        $('.nav-link').removeClass('nav-link-visited');
+        var $navLink = $('.nav-link-5');
+        $navLink.addClass('nav-link-visited');
+
+        $('.dynamic').removeClass('show');
+        var $contact = $('.contact');
+        $contact.addClass('show');
       }
     });
 
