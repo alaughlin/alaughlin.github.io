@@ -3,21 +3,26 @@
 
   portfolioApp.config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'pages/pinless.html'
+      .when('/projects/pinless', {
+        templateUrl: 'pages/pinless.html',
+        controller: 'pinlessCtrl'
       })
-      .when('/', {
+      .when('/projects/asteroids', {
         templateUrl: 'pages/asteroids.html'
       })
-      .when('/', {
+      .when('/projects/chess', {
         templateUrl: 'pages/chess.html'
       })
-      .when('/', {
+      .when('/skills', {
         templateUrl: 'pages/skills.html'
       })
-      .when('/', {
+      .when('/contact', {
         templateUrl: 'pages/contact.html'
       })
+  });
+
+  portfolioApp.controller('pinlessCtrl', function ($scope) {
+    console.log("fired");
   });
 
 })();

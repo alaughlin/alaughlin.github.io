@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="portfolioApp">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Adam Laughlin</title>
@@ -18,70 +18,16 @@
       
         <nav class="nav-bar">
           <ul class="group">
-            <li><a href="#/projects/1" class="nav-link-1 nav-link" data-id="1">Pinless</a></li>
-            <li><a href="#/projects/2" class="nav-link-2 nav-link" data-id="2">Asteroids</a></li>
-            <li><a href="#/projects/3" class="nav-link-3 nav-link" data-id="3">Chess</a></li>
-            <li><a href="#/skills" class="nav-link-4 nav-link">Skills</a></li>
-            <li><a href="#/contact" class="nav-link-5 nav-link">Contact</a></li>
+            <li><a href="#projects/pinless" class="nav-link-1 nav-link">Pinless</a></li>
+            <li><a href="#projects/asteroids" class="nav-link-2 nav-link">Asteroids</a></li>
+            <li><a href="#projects/chess" class="nav-link-3 nav-link">Chess</a></li>
+            <li><a href="#skills" class="nav-link-4 nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link-5 nav-link">Contact</a></li>
           </ul>
         </nav>
       </header>
 
-      <section id="content" ng-view>
-        <article class="project-1 dynamic">
-          <h3><a href="http://pinless.adamlaughlin.net" class="project-link">Pinless</a></h3>
-          <p class="description">A clone of Pintrest, made with RoR and Backbone.js</p>
-          <a href="http://pinless.adamlaughlin.net"><img src="https://s3.amazonaws.com/alaughlin/images/pinless_small.png" class="project-screenshot"></a>
-          <ul>
-            <li><p>Users can create accounts by inputting details, or log in through Facebook.</p></li>
-            <li><p>Users can create boards and cards, allowing them to share images.</p></li>
-            <li><p>Boards and Cards can be liked/unliked, and users can be friended/unfriended.</p></li>
-            <li><p>New cards from boards you've liked show up in your main feed.</p></li>
-            <li><p>Friend requests are pushed to users</p></li>
-          </ul>
-        </article>
-
-        <article class="project-2 dynamic">
-          <h3>Asteroids</h3>
-          <p>
-            Asteroids in the browser, made using Canvas
-          </p>
-        </article>
-
-        <article class="project-3 dynamic">
-          <h3><a href="https://github.com/alaughlin/chess" class="project-link">Chess</a></h3>
-          <p class="description">Chess in Ruby</p>
-          <img src="https://s3.amazonaws.com/alaughlin/images/chess_small.png" class="project-screenshot">
-          <ul>
-            <li><p>Unicode pieces</p></li>
-            <li><p>Color board</p></li>
-            <li><p>Castling supported</p></li>
-            <li><p>Checks for stalemate</p></li>
-            <li><p>Pawn Promotion</p></li>
-            <li><p>Support for saving/loading a game</p></li>
-            <li><p>Captured piece display</p></li>
-          </ul>
-        </article>
-
-        <article class="skills dynamic">
-          <a href="https://www.ruby-lang.org/"><img src="https://s3.amazonaws.com/alaughlin/images/ruby.png" class="skill-image"></a>
-          <a href="http://www.rubyonrails.org/"><img src="https://s3.amazonaws.com/alaughlin/images/rails.svg" class="skill-image"></a>
-          <a href="http://www.postgresql.org/"><img src="https://s3.amazonaws.com/alaughlin/images/postgreSQL.png" class="skill-image"></a>
-          <img src="https://s3.amazonaws.com/alaughlin/images/javascript.png" class="skill-image">
-          <a href="http://www.jquery.com/"><img src="https://s3.amazonaws.com/alaughlin/images/jquery.png" class="skill-image"></a>
-          <a href="http://www.backbonejs.org/"><img src="https://s3.amazonaws.com/alaughlin/images/backbone.png" class="skill-image"></a>
-          <img src="https://s3.amazonaws.com/alaughlin/images/html.png" class="skill-image">
-          <a href="https://www.python.org/"><img src="https://s3.amazonaws.com/alaughlin/images/python.png" class="skill-image"></a>
-        </article>
-      </section>
-
-      <article class="contact dynamic">
-        <h3>Contact Me</h3>
-        <p>Email: <a href="mailto:adamlaughlin@outlook.com" class="contact-link">adamlaughlin@outlook.com</a></p>
-        <p>Phone: (203) 512 1933</p>
-        <p>Github: <a href="https://github.com/alaughlin" class="contact-link">alaughlin</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/pub/adam-laughlin/b/b8a/216" class="contact-link">Adam Laughlin</a></p>
-      </article>
+      <section id="content" ng-view></section>
 
       <footer class="footer">
         <ul class="group">
