@@ -5,6 +5,8 @@
     <title>Adam Laughlin</title>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css"/>
   </head>
@@ -25,7 +27,7 @@
         </nav>
       </header>
 
-      <section id="content">
+      <section id="content" ng-view>
         <article class="project-1 dynamic">
           <h3><a href="http://pinless.adamlaughlin.net" class="project-link">Pinless</a></h3>
           <p class="description">A clone of Pintrest, made with RoR and Backbone.js</p>
