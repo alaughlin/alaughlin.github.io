@@ -18,6 +18,9 @@
       .when('/contact', {
         templateUrl: 'pages/contact.html'
       })
+      .otherwise({
+        redirectTo: '/pinless'
+      })
     $locationProvider.html5Mode(true);
   });
 })();
