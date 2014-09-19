@@ -1,16 +1,15 @@
 (function () {
   var portfolioApp = angular.module('portfolioApp', ['ngRoute']);
 
-  portfolioApp.config(function ($routeProvider) {
+  portfolioApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/projects/pinless', {
+      .when('/pinless', {
         templateUrl: 'pages/pinless.html',
-        controller: 'pinlessCtrl'
       })
-      .when('/projects/asteroids', {
+      .when('/asteroids', {
         templateUrl: 'pages/asteroids.html'
       })
-      .when('/projects/chess', {
+      .when('/chess', {
         templateUrl: 'pages/chess.html'
       })
       .when('/skills', {
@@ -19,10 +18,6 @@
       .when('/contact', {
         templateUrl: 'pages/contact.html'
       })
+    $locationProvider.html5Mode(true);
   });
-
-  portfolioApp.controller('pinlessCtrl', function ($scope) {
-    console.log("fired");
-  });
-
 })();
