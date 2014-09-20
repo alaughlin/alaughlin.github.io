@@ -6,8 +6,8 @@
       .when('/pinless', {
         templateUrl: 'pages/pinless.html',
       })
-      .when('/asteroids', {
-        templateUrl: 'pages/asteroids.html'
+      .when('/snake', {
+        templateUrl: 'pages/snake.html'
       })
       .when('/chess', {
         templateUrl: 'pages/chess.html'
