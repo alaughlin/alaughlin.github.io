@@ -4,7 +4,7 @@
   portfolioApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/pinless', {
-        templateUrl: 'pages/pinless.html',
+        templateUrl: 'pages/pinless.html'
       })
       .when('/snake', {
         templateUrl: 'pages/snake.html'
