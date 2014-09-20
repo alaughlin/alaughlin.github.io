@@ -10,3 +10,13 @@
   <section id="game-board" class="group"></section>
   <p>Score: <p id="score"></p></p>
 </article>
+
+<script>
+  $(document).ready(function () {
+    game.initialize();
+
+    window.setInterval(function () {
+      game.tick();
+    }, 75);
+  });
+</script>

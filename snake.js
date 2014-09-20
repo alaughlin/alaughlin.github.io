@@ -1,4 +1,4 @@
-$(document).ready(function () {
+(function () {
   var game = window.game = {};
 
   game.changeDirection = function (keyCode) {
@@ -137,10 +137,4 @@ $(document).ready(function () {
       return false;
     });
   };
-
-  game.initialize();
-
-  window.setInterval(function () {
-    game.tick();
-  }, 75);
-});
+})();
