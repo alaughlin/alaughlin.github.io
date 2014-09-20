@@ -30,6 +30,6 @@
   });
 
   portfolioApp.controller('mainController', function () {
-    clearInterval(game.runningGame);
+    clearInterval(window.game.runningGame);
   });
 })();
