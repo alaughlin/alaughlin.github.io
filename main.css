@@ -184,3 +184,7 @@ p {
 .snake-spot {
   background: black;
 }
+
+.apple-spot {
+  background: red;
+}
