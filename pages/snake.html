@@ -9,15 +9,11 @@
 </article>
 
 <script>
-  $(window).load(function () {
-    var mousetrap = "https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js";
-    var snake = "snake.js";
-    
-    head.js(mousetrap, snake, function() {
-      game.initialize();
-      window.setInterval(function () {
-        game.tick();
-      }, 75);
-    });
+  $(document).ready(function () {
+    game.initialize();
+
+    window.setInterval(function () {
+      game.tick();
+    }, 75);
   });
 </script>
