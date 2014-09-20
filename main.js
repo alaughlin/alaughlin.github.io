@@ -4,23 +4,32 @@
   portfolioApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/pinless', {
-        templateUrl: 'pages/pinless.html'
+        templateUrl: 'pages/pinless.html',
+        controller: 'mainController'
       })
       .when('/snake', {
-        templateUrl: 'pages/snake.html'
+        templateUrl: 'pages/snake.html',
+        controller: 'mainController'
       })
       .when('/chess', {
-        templateUrl: 'pages/chess.html'
+        templateUrl: 'pages/chess.html',
+        controller: 'mainController'
       })
       .when('/skills', {
-        templateUrl: 'pages/skills.html'
+        templateUrl: 'pages/skills.html',
+        controller: 'mainController'
       })
       .when('/contact', {
-        templateUrl: 'pages/contact.html'
+        templateUrl: 'pages/contact.html',
+        controller: 'mainController'
       })
       .otherwise({
         redirectTo: '/pinless'
       })
     $locationProvider.html5Mode(true);
+  });
+
+  portfolioApp.controller('mainController', function () {
+    clearInterval(game.runningGame);
   });
 })();
