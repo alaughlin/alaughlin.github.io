@@ -4,16 +4,16 @@ $(document).ready(function () {
   game.changeDirection = function (keyCode) {
     switch(keyCode) {
     case 37:
-      if (game.direction != 39) { game.direction = "left" }
+      if (game.direction != "right") { game.direction = "left" }
       break;
     case 39:
-      if (game.direction != 37) { game.direction = "right" }
+      if (game.direction != "left") { game.direction = "right" }
       break;
     case 38:
-      if (game.direction != 40) { game.direction = "up" }
+      if (game.direction != "down") { game.direction = "up" }
       break;
     case 40:
-      if (game.direction != 38) { game.direction = "down" }
+      if (game.direction != "up") { game.direction = "down" }
       break;
     }
   };
@@ -49,20 +49,27 @@ $(document).ready(function () {
   };
 
   game.moveSnake = function () {
-    game.snake.shift();
-    game.snake.push([_.last(game.snake)[0] + game.applyDeltas()[1], _.last(game.snake)[1] + game.applyDeltas()[0]]);
+    if (game.moving) {
+      game.snake.shift();
+      game.snake.push([_.last(game.snake)[0] + game.applyDeltas()[1], _.last(game.snake)[1] + game.applyDeltas()[0]]);
+    }
   };
 
   game.renderBoard = function () {
     game.snakeHead = _.last(game.snake);
 
+    // check if snake eats apple
+    _.each(game.apples, function (apple) {
+      if (apple.toString() === game.snakeHead.toString()) {
+        _.reject(game.apples, function (spot) { return apple === spot});
+        $('.square[data-coord="[' + apple[0] + ', ' + apple[1] + ']"]').removeClass('apple-spot');
+        console.log($('.square[data-coord="[' + apple[0] + ', ' + apple[1] + ']"]').data('coord'));
+      }
+    });
+
     // reset if out-of-bounds
     if (game.snakeHead[0] < 0 || game.snakeHead[0] > 19 || game.snakeHead[1] < 0 || game.snakeHead[1] > 19 ) {
       game.initialize();
-    }
-
-    if (game.moving) {
-      game.moveSnake();
     }
 
     // wipe squares and redraw
@@ -71,13 +78,18 @@ $(document).ready(function () {
     _.each(game.snake, function (spot) {
       $('.square[data-coord="[' + spot[0] + ', ' + spot[1] + ']"]').addClass('snake-spot');
     });
+
+    _.each(game.apples, function (spot) {
+      $('.square[data-coord="[' + spot[0] + ', ' + spot[1] + ']"]').addClass('apple-spot');
+    });
   };
 
   game.initialize = function () {
     game.board = [];
     game.snake = [[10, 10], [10, 11], [10, 12]];
+    game.apples = [];
     game.moving = false;
-    game.direction = "right";
+    game.direction = null;
     // we need to wipe the board when a reset happens
     $('#game-board').html("");
 
@@ -90,6 +102,8 @@ $(document).ready(function () {
       }
     }
 
+    game.apples = [[0, 0]];
+
     Mousetrap.bind(['left', 'up', 'right', 'down'], function (event) {
       if (game.moving === false) { game.moving = true };
       game.changeDirection(event.keyCode);
@@ -99,6 +113,7 @@ $(document).ready(function () {
 
   game.initialize();
   window.setInterval(function () {
+    game.moveSnake();
     game.renderBoard();
   }, 75);
 });
