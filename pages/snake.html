@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
-<script src="snake.js"></script>
-
 <article class="project-2 dynamic">
   <h3>Snake</h3>
   <p>
@@ -12,11 +9,15 @@
 </article>
 
 <script>
-  $(document).ready(function () {
-    game.initialize();
-
-    window.setInterval(function () {
-      game.tick();
-    }, 75);
+  $(window).load(function () {
+    var mousetrap = "https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js";
+    var snake = "snake.js";
+    
+    head.js(mousetrap, snake, function() {
+      game.initialize();
+      window.setInterval(function () {
+        game.tick();
+      }, 75);
+    });
   });
 </script>
