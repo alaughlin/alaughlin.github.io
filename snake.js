@@ -18,7 +18,7 @@ $(document).ready(function () {
     }
   };
 
-  game.applyDeltas = function () {
+  game.getDeltas = function () {
     var xDelta;
     var yDelta;
     
@@ -50,9 +50,13 @@ $(document).ready(function () {
 
   game.moveSnake = function () {
     if (game.moving) {
+      game.snake.push([_.last(game.snake)[0] + game.getDeltas()[1], _.last(game.snake)[1] + game.getDeltas()[0]]);
       game.snake.shift();
-      game.snake.push([_.last(game.snake)[0] + game.applyDeltas()[1], _.last(game.snake)[1] + game.applyDeltas()[0]]);
     }
+  };
+
+  game.addToSnake = function (apple) {
+    game.snake.unshift(apple);
   };
 
   game.renderBoard = function () {
@@ -61,9 +65,9 @@ $(document).ready(function () {
     // check if snake eats apple
     _.each(game.apples, function (apple) {
       if (apple.toString() === game.snakeHead.toString()) {
-        _.reject(game.apples, function (spot) { return apple === spot});
+        game.apples = _.reject(game.apples, function (spot) { return apple === spot});
         $('.square[data-coord="[' + apple[0] + ', ' + apple[1] + ']"]').removeClass('apple-spot');
-        console.log($('.square[data-coord="[' + apple[0] + ', ' + apple[1] + ']"]').data('coord'));
+        game.addToSnake(apple);
       }
     });
 
@@ -82,11 +86,14 @@ $(document).ready(function () {
     _.each(game.apples, function (spot) {
       $('.square[data-coord="[' + spot[0] + ', ' + spot[1] + ']"]').addClass('apple-spot');
     });
+
+    // update score
+    $('#score').html(game.snake.length);
   };
 
   game.initialize = function () {
     game.board = [];
-    game.snake = [[10, 10], [10, 11], [10, 12]];
+    game.snake = [[10, 10]];
     game.apples = [];
     game.moving = false;
     game.direction = null;
@@ -102,7 +109,7 @@ $(document).ready(function () {
       }
     }
 
-    game.apples = [[0, 0]];
+    game.apples = [[10, 12], [0, 0], [5, 5]];
 
     Mousetrap.bind(['left', 'up', 'right', 'down'], function (event) {
       if (game.moving === false) { game.moving = true };
