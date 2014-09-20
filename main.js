@@ -9,7 +9,6 @@
       })
       .when('/snake', {
         templateUrl: 'pages/snake.html',
-        controller: 'mainController'
       })
       .when('/chess', {
         templateUrl: 'pages/chess.html',
